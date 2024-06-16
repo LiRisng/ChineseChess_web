@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testPage</title>
+    <script src="js/jquery_3.3.1.js"></script>
+
+</head>
+<body>
+    <div>
+        <br>
+            <label>选边:</label>
+            <input type="radio" value="red" checked = "checked" name="side">红方
+            <input type="radio" value="black" name="side">黑方
+    </div>
+    <button onclick="getMatch()">匹配</button>
+<script>
+    function getMatch() {
+        let radio = document.getElementsByName("side");
+        let player = {
+            "id":1,
+            "nickname":"刘邦",
+            "winrate":0,
+            "side": true
+        }
+        if(radio[1].checked) {
+            player.id = 2;
+            player.nickname = "项羽";
+            player.winrate = 0;
+            player.side=false;
+        }
+        sessionStorage.setItem("player",JSON.stringify(player));
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(player),
+            url: "getMatch" ,//url
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                let against = result;
+                alert(against.nickname);
+                if(against.id != null){
+                    let storage = window.sessionStorage;
+                    storage.setItem("against",JSON.stringify(against))
+                    window.open('ChessBoard.html','_self');
+                }
+                else{
+                    alert("玩家较少，稍后再试");
+                }
+
+            },
+            error : function(e){
+                console.log(e.status);
+                console.log(e.responseText);
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

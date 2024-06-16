@@ -1,0 +1,16 @@
+.container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+}
+
+.transparent-part {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0); /* 设置背景为白色并设置透明度为0.5 */
+    clip-path: circle(40%)/*polygon(0% 0%, 100% 0%, 100% 50%, 50% 50%, 50% 100%, 0% 100%);  设置裁剪路径 */
+}

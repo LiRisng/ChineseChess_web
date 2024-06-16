@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对弈页</title>
+    <link rel="stylesheet" href="css/first.css">
+    <script src="js/jquery_3.3.1.js"></script>
+    <script src="js/login.js"></script>
+
+    <script>
+        let storage = window.sessionStorage;
+        const player = JSON.parse(storage.getItem("player"));
+        if (player == null){
+            window.location.href = "login.html"
+        }
+        console.log(player);
+    </script>
+
+</head>
+<body class="body">
+<div class="main">
+    <div class="icon_img" style="height: 400px;width: 400px"></div>
+    <form action="login" method="post" class="form" id = "login">
+        <div>
+            <br>
+            <label>选边:</label>
+                <input type="radio" value="red" checked = "checked" name="side">红方
+                <input type="radio" value="black" name="side">黑方
+
+        </div>
+
+    </form>
+    <div class = "button_box">
+        <button onclick="getMatch(player)" class="large-button" style="margin-right: 5px">匹配</button>
+        <button onclick="window.location.href= 'index.html'" class="large-button" style="margin-left: 5px">退出</button>
+    </div>
+</div>
+
+
+</body>
+</html>

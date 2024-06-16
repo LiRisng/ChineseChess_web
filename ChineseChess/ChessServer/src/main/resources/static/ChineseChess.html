@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .parent {
+            background-color: lightblue;
+            padding: 20px;
+        }
+
+        .child {
+            background-color: lightcoral;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="parent" onclick="parentClick()">
+    Parent Element
+    <div class="child" onclick="childClick(event)">
+        Child Element
+    </div>
+</div>
+
+<script>
+    function parentClick() {
+        console.log('Parent element clicked');
+    }
+
+    function childClick(event) {
+        event.stopPropagation(); // 阻止事件冒泡
+        console.log('Child element clicked');
+    }
+</script>
+
+</body>
+</html>

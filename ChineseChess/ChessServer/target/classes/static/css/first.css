@@ -1,0 +1,84 @@
+
+.body{
+    height: 100vh;
+    flex-direction: row;
+    background-image: url('../images/ChessBoard.jpg');
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main{
+    text-align: center;
+    border-radius: 20px;
+    width: 500px;
+    height: 600px;
+    border: 3px white;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.icon_img{
+    /*height: 400px;*/
+    /*width: 400px;*/
+    height: 100vh;
+    border-radius: 20px;
+    background-image: url(../images/chess.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form{
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_box{
+    width:360px;
+    height:36px;
+    background-image: url(../images/button.png);
+    border: solid #771e13 2px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    height: 490px;
+    border-radius: 20px;
+    /*position: relative;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_box{
+    height: 80px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.large-button {
+    /*background-color: #d9b885;*/
+    border-radius: 20px;
+    border: 3px solid #771e13;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    background-image: url("../images/button.png");
+}
+.chessboard{
+    height: 1000px;
+    width: 900px;
+}
